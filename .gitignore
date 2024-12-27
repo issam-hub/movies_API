@@ -1,0 +1,14 @@
+# dotenv environment variables file
+.env
+
+# Dist directory
+dist/
+build/
+bin/
+
+# Temporary files
+tmp/
+temp/
+
+# air configuration
+.air.toml

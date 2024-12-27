@@ -1,0 +1,50 @@
+{{define "subject"}}Welcome to movies API{{end}}
+
+{{define "plainBody"}}
+Hi {{.Name}},
+
+Thanks for signing up for our API, We're excited to have you on board!
+
+Please send a request to the `PUT /v1/users/activated` endpoint with the
+following JSON body to activate your account:
+{"token": "{{.activationToken}}"}
+
+Please note that this is a one-time use token and it will expire in 2 days.
+
+We're looking forward to the many opportunities you are going to exploit by using our API.
+
+Thank you,
+
+The movies API team (just me XD)
+{{end}}
+
+{{define "htmlBody"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hi {{.Name}},</h3>
+    <p>
+        Thanks for signing up for our API, We're excited to have you on board!<br>
+
+        click on the button below to activate your account: <br>
+        <form method="PUT" action="http://localhost:5000/v1/users/activated" style="margin-inline: auto;">
+            <input type="hidden" value="{{.activationToken}}" name="token">
+            <button type="submit" class="activate" style="text-align: center;">Activate your account</button>
+        </form><br>
+        Please note that this is a one-time use token and it will expire in 2 days. <br>
+        
+        We're looking forward to the many opportunities you are going to exploit by using our API.<br>
+        
+        Thank you,<br>
+        
+        <span style="font-style: italic;">The movies API team (just me XD)</span>
+    </p>
+
+</body>
+</html>
+{{end}}

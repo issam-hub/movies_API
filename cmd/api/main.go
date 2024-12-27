@@ -61,9 +61,10 @@ type application struct {
 	wg     sync.WaitGroup
 }
 
-const version = "1.0.0"
-
-var buildTime string
+var (
+	version   = "1.0.0"
+	buildTime string
+)
 
 func customHTTPErrorHandler(err error, c echo.Context) {
 	var status int
